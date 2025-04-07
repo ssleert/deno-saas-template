@@ -1,5 +1,5 @@
 import { defineConfig } from "$fresh/server.ts";
-import tailwind from "$fresh/plugins/tailwind.ts";
+import tailwind from "@pakornv/fresh-plugin-tailwindcss";
 import { kvInsightsPlugin } from "deno-kv-insights/mod.ts";
 import env from "/utils/env.ts";
 import { KV } from "/db/mod.ts";

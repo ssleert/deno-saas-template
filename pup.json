@@ -1,12 +1,15 @@
 {
   "processes": [
     {
+      "env": {
+        "NODE_ENV": "production"
+      }
       "id": "app",
       "cmd": "deno run -A main.ts",
       "autostart": true,
       "restart": "error",
       "cluster": {
-        "instances": 4,
+        "instances": 4
       }
     }
   ],

@@ -12,7 +12,6 @@ export default function App(props: PageProps) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{env.PROJECT_NAME_UI}</title>
-        <link rel="stylesheet" href={asset("/global.css")} />
         <link rel="stylesheet" href={asset("/styles.css")} />
         <meta name="description" content="" />
 
