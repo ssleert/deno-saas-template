@@ -31,7 +31,7 @@ export default function Home(props: PageProps<HomeProps>) {
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
         <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
-        <p class="my-4">
+        <p class="my-4 prose">
           Try updating this message in the
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
         </p>

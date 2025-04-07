@@ -23,6 +23,7 @@
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "@pup/telemetry": "jsr:@pup/telemetry@^1.0.7",
     "@std/path": "jsr:@std/path@^1.0.8",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "sharp": "npm:sharp@^0.34.0",
     "@img/sharp-wasm32": "npm:@img/sharp-wasm32@^0.34.0",
     "hash-wasm": "https://esm.sh/hash-wasm@4.12.0",
