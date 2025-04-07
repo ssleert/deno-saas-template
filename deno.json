@@ -16,7 +16,7 @@
     "db:migrate": "deno run -A tasks/db_migrate.ts"
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*"],
+  "exclude": ["**/_fresh/*", "./node_modules"],
   "imports": {
     "/": "./",
     "./": "./",
@@ -30,6 +30,8 @@
     "hash-wasm": "https://esm.sh/hash-wasm@4.12.0",
     "preact": "https://esm.sh/preact@10.26.5",
     "preact/": "https://esm.sh/preact@10.26.5/",
+    "preact-render-to-string": "https://esm.sh/preact-render-to-string@6.5.13",
+    "preact-render-to-string/": "https://esm.sh/preact-render-to-string@6.5.13/",
     "@preact/signals": "https://esm.sh/*@preact/signals@2.0.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.8.0",
     "tailwindcss": "npm:tailwindcss@4.1.3",
