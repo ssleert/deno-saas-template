@@ -6,7 +6,7 @@
     "manifest": "deno task cli manifest $(pwd)",
     "start": "deno run --inspect -A --watch=static/,routes/ dev.ts",
     "start-watchless": "deno run --inspect -A dev.ts",
-    "build": "deno run -A dev.ts build",
+    "build": "NODE_ENV=production deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "pup": "pup run -c ./pup.json",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
