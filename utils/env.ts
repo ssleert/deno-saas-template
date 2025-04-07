@@ -1,4 +1,4 @@
-import "$std/dotenv/load.ts";
+import "@std/dotenv/load";
 
 export default {
   PROJECT_NAME: Deno.env.get("PROJECT_NAME") ?? "template",
