@@ -10,7 +10,7 @@
 - **API Layer**: Hono ⚙️
 - **Styling**: Tailwind CSS 🎨
 - **Database**: Deno KV 📦
-- **Initiation Date**: April 5, 2025 🗓️
+- **Initiation Date**: April 4, 2025 🗓️
 
 The template is pre-configured with an admin dashboard, image upload functionality, a documented API, and secure authentication mechanisms, making it an ideal starting point for our team’s projects.
 
