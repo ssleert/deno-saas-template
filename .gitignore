@@ -12,3 +12,6 @@ node_modules/
 
 # persistent data directory
 data/
+
+# pup process manager runtime dir
+.pup

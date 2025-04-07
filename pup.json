@@ -1,9 +1,8 @@
 {
-  "name": "server",
   "processes": [
     {
       "id": "app",
-      "cmd": "deno run preview",
+      "cmd": "deno run main.ts",
       "autostart": true,
       "restart": "error",
       "cluster": {
