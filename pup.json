@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "processes": [
+    {
+      "id": "app",
+      "cmd": "deno run preview",
+      "autostart": true,
+      "restart": "error",
+      "cluster": {
+        "instances": 4,
+        "startPort": 20000,
+        "commonPort": 8123,
+        "strategy": "round-robin"
+      }
+    }
+  ],
+  "plugins": [
+    {
+      "url": "jsr:@pup/plugin-web-interface",
+      "options": {
+        "port": 5000
+      }
+    }
+  ]
+}
