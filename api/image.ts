@@ -5,8 +5,19 @@ import { parseCookies } from "/utils/cookie.ts";
 import { KV } from "/db/mod.ts";
 import consts from "/utils/consts.ts";
 import { xxhash64 } from "hash-wasm";
-import sharp from "sharp";
-import { Buffer } from "node:buffer";
+import {
+  ImageMagick,
+  initializeImageMagick,
+  MagickFormat,
+} from "@imagemagick/magick-wasm";
+
+const wasmBytes = await Deno.readFile(
+  new URL(
+    "magick.wasm",
+    import.meta.resolve("@imagemagick/magick-wasm"),
+  ),
+);
+await initializeImageMagick(wasmBytes);
 
 const ImageUploadRequest = Type.Object({
   image: Type.Any(),
@@ -74,7 +85,7 @@ const route = app.post(
 
     try {
       const imageData = await image.arrayBuffer();
-      const imageBuffer = Buffer.from(imageData);
+      const imageBuffer = new Uint8Array(imageData);
 
       const hash = await xxhash64(new Uint8Array(imageData));
       const filename = `${hash}.webp`;
@@ -96,11 +107,13 @@ const route = app.post(
         }
       }
 
-      const webpData = await sharp(imageBuffer)
-        .webp({ quality: 70 })
-        .toBuffer();
+      await ImageMagick.read(imageBuffer, async (image) => {
+        image.quality = 70;
 
-      await Deno.writeFile(filePath, webpData);
+        await image.write(MagickFormat.WebP, async (data) => {
+          await Deno.writeFile(filePath, data);
+        });
+      });
 
       return c.json({
         imageId: hash,

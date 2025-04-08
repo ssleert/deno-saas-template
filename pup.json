@@ -2,10 +2,26 @@
   "processes": [
     {
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
       },
       "id": "app",
-      "cmd": "deno run -A main.ts",
+      "cmd": "deno run \
+                --allow-net \
+                --allow-env \
+                --allow-read=.env \
+                --allow-read=./static \
+                --allow-read=./_fresh \
+                --allow-read=./node_modules \
+                --allow-read=./data \
+                --allow-read=./certs \
+                --allow-read=./deno.json \
+                --allow-write=./data/database \
+                --allow-write=./static/image \
+                --deny-read=../node_modules \
+                --deny-run \
+                --deny-ffi \
+                --deny-sys \
+                main.ts",
       "autostart": true,
       "restart": "error",
       "cluster": {

@@ -15,19 +15,31 @@
     "db:reset": "deno run -A tasks/db_reset.ts",
     "db:migrate": "deno run -A tasks/db_migrate.ts"
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*", "./node_modules"],
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*",
+    "node_modules",
+    "pup.json"
+  ],
   "imports": {
     "/": "./",
     "./": "./",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@imagemagick/magick-wasm": "npm:@imagemagick/magick-wasm@^0.0.34",
     "@pup/telemetry": "jsr:@pup/telemetry@^1.0.7",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.3",
     "@std/path": "jsr:@std/path@^1.0.8",
-    "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
-    "sharp": "npm:sharp@^0.34.0",
-    "@img/sharp-wasm32": "npm:@img/sharp-wasm32@^0.34.0",
     "hash-wasm": "https://esm.sh/hash-wasm@4.12.0",
+    "react": "https://esm.sh/preact@10.26.5/compat",
+    "react/": "https://esm.sh/preact@10.26.5/compat/",
+    "react-dom": "https://esm.sh/preact@10.26.5/compat/",
     "preact": "https://esm.sh/preact@10.26.5",
     "preact/": "https://esm.sh/preact@10.26.5/",
     "preact-render-to-string": "https://esm.sh/preact-render-to-string@6.5.13",
@@ -36,6 +48,7 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.8.0",
     "tailwindcss": "npm:tailwindcss@4.1.3",
     "tailwindcss/plugin": "npm:/tailwindcss@4.1.3/plugin.js",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "@pakornv/fresh-plugin-tailwindcss": "jsr:@pakornv/fresh-plugin-tailwindcss@^1.0.2",
     "@kitsonk/kv-toolbox": "jsr:@kitsonk/kv-toolbox@^0.27.4",
     "hono": "https://esm.sh/hono@4.7.5",
@@ -48,7 +61,22 @@
     "@scalar/hono-api-reference": "npm:@scalar/hono-api-reference@0.7.4",
     "deno-kv-insights/": "https://deno.land/x/deno_kv_insights@v0.8.4-beta/"
   },
-  "compilerOptions": { "jsx": "precompile", "jsxImportSource": "preact" },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "preact"
+  },
   "nodeModulesDir": "auto",
-  "unstable": ["net", "kv", "broadcast-channel"]
+  "unstable": [
+    "net",
+    "kv",
+    "broadcast-channel"
+  ],
+  "deploy": {
+    "project": "d94c509f-c28a-4011-814e-9f2f03ccf9bb",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
 }
