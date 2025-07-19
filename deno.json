@@ -33,7 +33,6 @@
     "./": "./",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "@imagemagick/magick-wasm": "npm:@imagemagick/magick-wasm@^0.0.35",
-    "@pup/telemetry": "jsr:@pup/telemetry@^1.0.7",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.3",
     "@std/path": "jsr:@std/path@^1.0.8",
     "hash-wasm": "https://esm.sh/hash-wasm@4.12.0",

@@ -10,8 +10,5 @@ import "@std/dotenv/load";
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import config from "./fresh.config.ts";
-import { PupTelemetry } from "@pup/telemetry";
-
-new PupTelemetry();
 
 await start(manifest, config);
