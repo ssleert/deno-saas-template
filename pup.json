@@ -24,17 +24,6 @@
                 main.ts",
       "autostart": true,
       "restart": "error",
-      "cluster": {
-        "instances": 4
-      }
-    }
-  ],
-  "plugins": [
-    {
-      "url": "jsr:@pup/plugin-web-interface",
-      "options": {
-        "port": 5000
-      }
     }
   ]
 }
